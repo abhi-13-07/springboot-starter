@@ -7,6 +7,12 @@
     <requiredProperties>
         <!-- Project name will be used in main java file and application.properties -->
         <requiredProperty key="projectName" />
+        <requiredProperty key="javaVersion">
+            <defaultValue>21</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="springBootVersion">
+            <defaultValue>3.5.3</defaultValue>
+        </requiredProperty>
         <!--
             Workaround for copying .gitignore into generated project
             Solution from: https://stackoverflow.com/questions/7981060/maven-archetype-plugin-doesnt-let-resources-in-archetype-resources-through
@@ -40,6 +46,10 @@
                 <include>mvnw</include>
                 <include>mvnw.cmd</include>
             </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>.mvn/wrapper</directory>
         </fileSet>
     </fileSets>
 </archetype-descriptor>
